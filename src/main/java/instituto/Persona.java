@@ -30,7 +30,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Constructor que permite crear un objeto de tipo persona con su dni (solo su numero, sin letra).
-     * @param nif
+     * @param nif int que contenga el numero del nif de la persona, sin letra.
      */
     public Persona(int nif) {
         this();
@@ -40,12 +40,12 @@ public class Persona implements Comparable<Persona> {
     /**
      * Constructor que permite crear un objeto de tipo persona con  todos los atributos
      * de esta.
-     * @param nif
-     * @param nombre
-     * @param genero
-     * @param dia
-     * @param mes
-     * @param ano
+     * @param nif int que contenga el numero del nif de la persona, sin letra.
+     * @param nombre String que contenga el nombre de la persona.
+     * @param genero char que contenga la inicial del género de la persona.
+     * @param dia int que contenga el dia en el que nació la persona.
+     * @param mes int que contenga el mes en el que nació la persona.
+     * @param ano int que contenga el año en el que nació la persona.
      */
     public Persona(int nif, String nombre, char genero,
             int dia, int mes, int ano) {
@@ -58,7 +58,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Metodo que devuelve el nombre de una persona.
-     * @return
+     * @return Objeto de tipo Nif que contiene el Nif de la Persona.
      */
     public Nif getNif() {
         return nif;
@@ -66,7 +66,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Metodo que permite cambiar el nombre de una persona.
-     * @param nif
+     * @param nif Objeto de tipo Nif que sustituirá el Nif de la Persona.
      */
     public void setNif(Nif nif) {
         this.nif = nif;
@@ -74,7 +74,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Metodo que devuelve el nombre de una persona.
-     * @return
+     * @return String que contiene el nombre de una Persona.
      */
     public String getNombre() {
         return nombre;
@@ -82,7 +82,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Metodo que permite cambiar el nombre de una persona.
-     * @param nombre
+     * @param nombre String que contiene un nombre que sustituirá el nombre de la Persona.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -90,7 +90,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Metodo que devuelve el genero de una persona.
-     * @return
+     * @return char que devuelve la letra inicial del género de la Persona.
      */
     public char getGenero() {
         return genero;
@@ -98,7 +98,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Metodo que permite cambiar el genero de una persona.
-     * @param genero
+     * @param genero char que contiene la letra inicial del género de la Persona (H o M).
      */
     public void setGenero(char genero) {
         this.genero = genero;
@@ -106,7 +106,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Metodo que devuelve la fecha de nacimiento de una persona.
-     * @return
+     * @return Objeto de tipo LocalDate que contiene la fecha de nacimiento de la Persona.
      */
     public LocalDate getNacimiento() {
         return nacimiento;
@@ -114,7 +114,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Metodo que permite cambiar la fecha de nacimiento de una persona.
-     * @param nacimiento
+     * @param nacimiento Objeto de tipo LocalDate que sustituirá la fecha de nacimiento de la persona.
      */
     public void setNacimiento(LocalDate nacimiento) {
         this.nacimiento = nacimiento;
@@ -122,7 +122,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Método que devuelve la edad de la persona.
-     * @return
+     * @return int que contiene la edad de la Persona.
      */
     public int getEdad() {
         return Period.between(nacimiento, LocalDate.now()).getYears();
@@ -130,7 +130,7 @@ public class Persona implements Comparable<Persona> {
 
     /**
      * Método que devuelve la persona en forma de String con todos sus datos.
-     * @return
+     * @return String que contiene toda la informacion de la Persona con formato.
      */
     @Override
     public String toString() {
@@ -145,8 +145,8 @@ public class Persona implements Comparable<Persona> {
     /**
      * Compara la persona que queramos con una persona que se le pase como parametro,
      * esto lo hace mediante el metodo equals.
-     * @param a
-     * @return
+     * @param a Objeto de tipo persona que se comparará a otra Persona para ver si son iguales.
+     * @return True o False dependiendo si son iguales o no.
      */
     public boolean equals(Persona a) {
         if (a == null) {
@@ -158,8 +158,8 @@ public class Persona implements Comparable<Persona> {
     /**
      * Metodo que sobreescribe el metodo equals para poder ver si 2 objetos son
      * iguales.
-     * @param obj
-     * @return
+     * @param obj Objeto de cualquier tipo que será comparado con la Persona.
+     * @return True o False dependiendo si la Persona y el objeto pasado como parametro son iguales.
      */
     @Override
     public boolean equals(Object obj) {
@@ -180,8 +180,8 @@ public class Persona implements Comparable<Persona> {
     /**
      * Metodo que nos permite comparar personas, para a la hora de crear una
      * nueva sepamos si esa persona ya existe.
-     * @param o
-     * @return
+     * @param o Objeto de tipo Persona que sera comparado con la Persona.
+     * @return 1, 0 o -1 dependiendo si la persona pasada como parametro es mayor, igual o menor que la persona a comparar(ASCII).
      */
     @Override
     public int compareTo(Persona o) {

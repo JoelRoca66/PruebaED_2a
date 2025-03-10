@@ -13,7 +13,7 @@ public class Curso {
 
     /**
      * Metodo protegido que devuelve el nombre del curso.
-     * @return
+     * @return String que contiene el nombre del curso
      */
     protected String getNombre() {
         return nombre;
@@ -22,7 +22,7 @@ public class Curso {
     /**
      * Constructor que permite crear un objeto de tipo Curso pasandole el nombre
      * como parámetro.
-     * @param nombre 
+     * @param nombre Nombre que se pasa como parámetro para que sea el nuevo nombre del curso.
      */
     public Curso(String nombre) {
         this.nombre = nombre;
@@ -31,7 +31,7 @@ public class Curso {
 
     /**
      * Metodo que devuelve un curso en forma de String.
-     * @return
+     * @return String del curso, con formato adaptado.
      */
     @Override
     public String toString() {
@@ -46,7 +46,7 @@ public class Curso {
 
     /**
      * Metodo que permite añadir un alumno que se pase como parametro a un curso.
-     * @param p
+     * @param p Persona que se pasa como parametro para ser insertada al curso.
      */
     public void aniadirAlumno(Persona p) {
         listaAlumnos.add(p);

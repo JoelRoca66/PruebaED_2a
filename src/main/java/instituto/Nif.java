@@ -17,15 +17,15 @@ public class Nif {
 
     /**
      * Metodo privado que permite calcular la letra de un dni mediante su numero.
-     * @param numero
-     * @return 
+     * @param numero Numero del dni, sin letra
+     * @return Char que contiene la letra asociada a ese numero de dni.
      */
     private static char calcularLetra(int numero) {
         return LETRAS[numero % 23];
     }
 
     /**
-     * Constructor que permite crear un objeto de tipo Nif con valores por defecto.
+     * Constructor protegido que permite crear un objeto de tipo Nif con valores por defecto.
      */
     protected Nif() {
         this.numero = 0;
@@ -33,9 +33,9 @@ public class Nif {
     }
 
     /**
-     * Constructor que permite crear un objeto de tipo Nif mediante un numero que se le
+     * Constructor protegido que permite crear un objeto de tipo Nif mediante un numero que se le
      * pase como parámetro.
-     * @param numero
+     * @param numero Numero del dni, sin letra.
      */
     protected Nif(int numero) {
         this.numero = numero;
@@ -44,7 +44,7 @@ public class Nif {
 
     /**
      * Método que devuelve un Nif en forma de String
-     * @return
+     * @return String que contiene el dni y la letra de ese Nif, con formato.
      */
     @Override
     public String toString() {
@@ -52,9 +52,9 @@ public class Nif {
     }
 
     /**
-     * Metodo que permite cambiar el numero y la letra de un dni, asignándole
+     * Metodo protegido que permite cambiar el numero y la letra de un dni, asignándole
      * un nuevo valor que se le pasa como parametro (numero, letra automática).
-     * @param numero
+     * @param numero Numero del dni, sin letra.
      */
     protected void setNif(int numero) {
         this.numero = numero;
@@ -63,8 +63,8 @@ public class Nif {
 
     /**
      * Metodo que permite comprobar si 2 objetos de tipo Nif son iguales o no.
-     * @param obj
-     * @return
+     * @param obj Objeto de cualquier tipo que será comparado con el Nif.
+     * @return True o False dependiendo si el Nif y el objeto pasado como parametro son iguales.
      */
     @Override
     public boolean equals(Object obj) {
