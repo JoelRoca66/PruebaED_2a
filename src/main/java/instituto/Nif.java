@@ -15,6 +15,11 @@ public class Nif {
                 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L',
                 'C', 'K', 'E'};
 
+    /**
+     * Metodo privado que permite calcular la letra de un dni mediante su numero.
+     * @param numero
+     * @return 
+     */
     private static char calcularLetra(int numero) {
         return LETRAS[numero % 23];
     }
